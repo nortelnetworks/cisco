@@ -1,0 +1,9 @@
+<DIALTEMPLATE>
+  <TEMPLATE MATCH="2..." TIMEOUT="1"/><!-- Internal extensions 2000 to 2999. Wait 1 second, then dial -->
+  <TEMPLATE MATCH="......." TIMEOUT="1"/><!-- 7 digits. Wait 1 second, then dial -->
+  <TEMPLATE MATCH=".........." TIMEOUT="0"/><!-- 10 digits. Dial immediately -->
+  <TEMPLATE MATCH="1.........." TIMEOUT="0"/><!-- 1+10 digits. Dial immediately -->  
+  <TEMPLATE MATCH="*97" TIMEOUT="0"/><!-- *97 (for voicemail). Dial immediately -->
+  <TEMPLATE MATCH="*#" TIMEOUT="0" REWRITE="%1"/><!-- Dial Immediately After Pressing # -->
+  <TEMPLATE MATCH="*" TIMEOUT="5"/> <!-- Anything else. Wait 5 seconds, then dial -->
+</DIALTEMPLATE>
